@@ -1,6 +1,11 @@
 # Modelagem Lògica usando MYSQL Workbench
 
 Atividades de estudo de modelagem de banco de dados
+
+## Exemplo de Modelagem Lógica
+
+![Modelo Lógico do sistema de Vendas](modelo-logico-vendas.png)
+
 ## Sobre tipos de relacionamento
 
 ### 1:1
