@@ -69,3 +69,36 @@ ALTER TABLE produtos
     ADD quantidade INT NULL AFTER preco;
 ```
 
+# Exercício de Modelagem
+
+No phpMyAdmin utilize comandos SQL para fazer a modelagem física do exercício anterior.
+Você deve:
+
+Criar um novo banco de dados (Catálogo de Filmes)
+Criar duas tabelas (Gêneros e Filmes)
+Fazer o relacionamento entre as tabelas
+
+## Criando novo banco de dados
+```sql
+CREATE DATABASE catalogo_filmes CHARACTER SET utf8mb4;
+```
+### Criando Tabelas
+```sql
+CREATE TABLE generos(
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(45)
+);
+
+CREATE TABLE FILMES (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    titulo VARCHAR(45),
+    ano YEAR,
+    generos_id INT NOT NULL
+);
+
+ALTER TABLE FILMES RENAME TO filmes;
+
+ALTER TABLE filmes
+    ADD CONSTRAINT fk_filmes_generos
+    FOREIGN KEY (generos_id) REFERENCES generos(id);
+```
