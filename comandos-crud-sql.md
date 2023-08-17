@@ -118,11 +118,23 @@ SELECT nome,preco FROM produtos WHERE fabricante_id IN(3,5);
 
 SELECT nome,preco FROM produtos WHERE fabricante_id NOT IN(3,5);
 ```
-
 #### NÃO
 ```sql
 SELECT nome,descricao,preco FROM produtos WHERE NOT fabricante_id = 8;
 
 -- versão usando operador racional "diferença/diferente" 
 SELECT nome,descricao,preco FROM produtos WHERE  fabricante_id != 8;
+```
+---
+## UPDATE
+
+```sql
+UPDATE fabricantes SET nome = 'Asus do Brasil' WHERE id = 1; -- NÃO SE ESQUEÇA DO WHERE!!!
+
+-- UPDATE fabricantes2 SET nome = 'Asus do Paraguai';
+
+UPDATE produtos SET preco = 6549.74 WHERE id = 4;
+
+-- Altere a quantidade dos produtos da Apple e da Samsung para 20
+UPDATE produtos SET quantidade = 20 WHERE fabricante_id IN(3,5);
 ```
