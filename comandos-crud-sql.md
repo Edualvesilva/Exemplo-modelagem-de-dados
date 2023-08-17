@@ -138,3 +138,17 @@ UPDATE produtos SET preco = 6549.74 WHERE id = 4;
 -- Altere a quantidade dos produtos da Apple e da Samsung para 20
 UPDATE produtos SET quantidade = 20 WHERE fabricante_id IN(3,5);
 ```
+## DELETE
+
+```sql
+DELETE FROM fabricantes WHERE id= 1;
+DELETE FROM fabricantes WHERE id= 4;
+
+-- A query abaixo NÃO FUNCIONA devido á restrição
+-- de chave estrangeira/relacionamento, ou seja,
+-- existem produtos associados ao fabricante 3 (apple)
+-- DELETE FROM fabricantes WHERE id = 3;
+```
+
+
+
