@@ -67,12 +67,44 @@ VALUES(
     3
 );
 
+INSERT INTO produtos (nome,descricao,preco,quantidade,fabricante_id)
+VALUES(
+    'Xbox Series S',
+    'Velocidade e desempenho de última geração.',
+    1997.00,
+    5,
+    8
+),
+(
+    'Notebook Motion',
+    'Intel Dual Core 4G de RAM,128GB SSD e Tela 14,1 Polegadas.',
+    1213.65,
+    8,
+    7
+);
 
+```
+---
+## SELECT
 
+```sql
+SELECT * FROM produtos;
 
+SELECT nome, preco FROM produtos;
 
+SELECT preco,nome FROM produtos;
 
+SELECT nome,preco,quantidade FROM produtos WHERE preco < 5000;
 
+-- Mostre nome e descrição somente dos produtos da Apple
+SELECT nome,descricao FROM produtos WHERE fabricante_id = 3;
+```
+### Operadores Lógicos: E,OU,NÃO
+
+```sql
+SELECT nome,preco FROM produtos WHERE preco >= 2000 AND preco <= 6000;
+
+SELECT nome,preco FROM produtos WHERE preco > 5000 AND preco <= 6000;
 ```
 
 
